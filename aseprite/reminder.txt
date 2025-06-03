@@ -1,0 +1,2 @@
+work on progres add frame when charakter is switching legs + 1 and + 1 in animation so	
+it dont lok so fast
