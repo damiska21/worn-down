@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="worn-down"
-run/main_scene="uid://1ydxqiwmhdvb"
+run/main_scene="uid://s5xdvklddw8s"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
