@@ -3,8 +3,9 @@ extends CharacterBody2D
 
 const SPEED = 120.0
 const JUMP_VELOCITY = -400.0
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var last_direction
 
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,19 +20,17 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	
-	if direction > 0:
-		animated_sprite_2d.flip_h = false
-	elif direction != 0:
-		animated_sprite_2d.flip_h = true
-	
-	if velocity.x != 0:
-		animated_sprite_2d.play("run")
-	else:
-		animated_sprite_2d.play("idle")
-	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if velocity.x != 0:
+		last_direction = velocity.normalized().x 
+	
+	#settování směru koukání na všechny animace
+	animation_tree.set("parameters/idle/blend_position",last_direction)
+	animation_tree.set("parameters/run/blend_position",last_direction)
+	animation_tree.set("parameters/attack/blend_position",last_direction)
 
 	move_and_slide()
