@@ -1,23 +1,24 @@
-[gd_scene load_steps=5 format=4 uid="uid://s5xdvklddw8s"]
+[gd_scene load_steps=6 format=4 uid="uid://s5xdvklddw8s"]
 
 [ext_resource type="PackedScene" uid="uid://fxo7q27evuko" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://deadj4n60bnw2" path="res://assets/blocks.png" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://nppkgy0axcp2" path="res://scenes/enemy.tscn" id="2_lnu2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
 texture_region_size = Vector2i(14, 14)
 1:0/size_in_atlas = Vector2i(1, 2)
+1:0/next_alternative_id = 2
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, 7)
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
-2:0/size_in_atlas = Vector2i(1, 2)
-2:0/0 = 0
-2:0/0/texture_origin = Vector2i(0, 7)
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 7)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+2:0/size_in_atlas = Vector2i(1, 2)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 7)
 
 [sub_resource type="TileSet" id="TileSet_lbhrr"]
 tile_size = Vector2i(14, 14)
@@ -30,11 +31,17 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 tile_map_data = PackedByteArray("AAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAD6/wIAAAACAAAAAAD5/wMAAAACAAAAAAD4/wMAAAACAAAAAAD3/wMAAAACAAAAAAD3/wQAAAACAAAAAAD2/wQAAAACAAAAAAD1/wQAAAACAAAAAAD0/wQAAAACAAAAAADz/wQAAAACAAAAAADy/wQAAAACAAAAAADx/wQAAAACAAAAAADw/wQAAAACAAAAAADv/wQAAAACAAAAAADu/wQAAAACAAAAAADu/wMAAAACAAAAAADt/wMAAAACAAAAAADs/wMAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_lbhrr")
 
+[node name="Enemy" parent="." instance=ExtResource("2_lnu2h")]
+position = Vector2(81, 11)
+
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(-7, 25)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-3, -40)
+position = Vector2(33, -40)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_right_margin = 0.0
