@@ -16,6 +16,3 @@ func attack():
 	await get_tree().create_timer(animation_time).timeout
 	await get_tree().process_frame #kvůli tomu probliku
 	attacking = false
-	
-func wait(seconds: float) -> void:
-	await get_tree().create_timer(seconds).timeout
