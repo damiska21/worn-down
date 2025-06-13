@@ -591,15 +591,15 @@ states/idle/position = Vector2(475, 120)
 states/run/node = SubResource("AnimationNodeBlendSpace1D_oprun")
 states/run/position = Vector2(475, 35)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_a8ls1"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_qfm1y"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_fulsm"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_fjrip"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_smehm"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_dqkch")]
-graph_offset = Vector2(-25, -94)
+graph_offset = Vector2(-85.2914, -94)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(6, -16)
-texture = ExtResource("2_qhqgy")
-hframes = 8
+texture = ExtResource("4_qlg0r")
+hframes = 11
 vframes = 2
 frame = 1
 
@@ -632,5 +632,6 @@ parameters/attack/blend_position = -0.288641
 parameters/idle/blend_position = -0.287243
 parameters/run/blend_position = 0
 
+[connection signal="area_entered" from="Attack/Area2D" to="Attack" method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Attack" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

@@ -1,20 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://char6xew6scbo"]
+[gd_scene load_steps=5 format=3 uid="uid://char6xew6scbo"]
 
-[ext_resource type="Script" uid="uid://nxq6dfhu576g" path="res://scenes/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://nxq6dfhu576g" path="res://scripts/enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
+size = Vector2(20, 3)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7p1mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tegq"]
 size = Vector2(20, 23)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7p1mj"]
-
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_7p1mj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
-shape = SubResource("RectangleShape2D_8tegq")
+[node name="nohy" type="CollisionShape2D" parent="."]
+position = Vector2(9.53674e-07, -2.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7p1mj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, -24)
 scale = Vector2(-21.0264, 23.5136)
 texture = SubResource("PlaceholderTexture2D_7p1mj")
+
+[node name="hitbox" type="Area2D" parent="." groups=["player_hit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_8tegq")
