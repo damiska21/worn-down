@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmpdbfmkj40hg" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://br53f6b7ldaqu" path="res://assets/player_idle_sprint.png" id="2_qhqgy"]
-[ext_resource type="Script" uid="uid://ci8ljg3e7uhfc" path="res://scripts/attack.gd" id="4_dqkch"]
+[ext_resource type="Script" path="res://scripts/attack.gd" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ck2082e2my3qk" path="res://assets/OC_attack.png" id="4_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ls1"]
@@ -598,8 +598,8 @@ script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(6, -16)
-texture = ExtResource("4_qlg0r")
-hframes = 11
+texture = ExtResource("2_qhqgy")
+hframes = 8
 vframes = 2
 frame = 1
 

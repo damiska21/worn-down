@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://char6xew6scbo"]
 
-[ext_resource type="Script" uid="uid://nxq6dfhu576g" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_7p1mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
 size = Vector2(20, 3)
@@ -15,7 +15,6 @@ script = ExtResource("1_7p1mj")
 
 [node name="nohy" type="CollisionShape2D" parent="."]
 position = Vector2(9.53674e-07, -2.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7p1mj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
